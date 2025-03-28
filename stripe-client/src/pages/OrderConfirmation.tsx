@@ -32,8 +32,6 @@ export const OrderConfirmation = () => {
   if (!orderInfo) return <div>Loading...</div>
 
   const { customer, order, order_items } = orderInfo
-  // Example of orderInfo structure;
-  // { "order_items": [{ "id": 1, "order_id": "1", "product_id": 1, "product_name": "Ballong", "quantity": 1, "unit_price": "100.00" }, { "id": 2, "order_id": "1", "product_id": 2, "product_name": "Skor", "quantity": 5, "unit_price": "987.00" }, { "id": 7, "order_id": "1", "product_id": 1, "product_name": "Ballong", "quantity": 6, "unit_price": "100.00" }, { "id": 8, "order_id": "1", "product_id": 2, "product_name": "Skor", "quantity": 1, "unit_price": "987.00" }], "order": { "id": 1, "customer_id": 7, "total_price": "1587.00", "payment_status": "Paid", "payment_id": "cs_test_b1CBWBW2GpGijl1L4guULqU9sVcQJ9dCikAP4mzgbcksnEu6p6L89ya2Pw", "order_status": "Received", "created_at": "2025-03-28T20:06:05.000Z", "updated_at": "2025-03-28T20:08:16.000Z" }, "customer": { "id": 7, "email": "hihi@email.com" } }
   return (
     <>
     <div>Bekräftelse</div>
@@ -41,6 +39,7 @@ export const OrderConfirmation = () => {
       <h2>Checkout Session</h2>
         <p>Kund: {customer.email}</p>
         <p>Pris totalt: {order.total_price} SEK</p>
+        <p>Status: {order.payment_status}</p>
         <hr />
         <p>Orderrader</p>
         {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
